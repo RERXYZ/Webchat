@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppons:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: "Poppins", sans-serif;
+    transition: .2s all linear;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+:root {
+    --background: #f7f7f7;
+    --text: black;
+    --wrapper: white;
+    --border: #ccc;
+    --button: #333;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: black;
+        --text: white;
+        --wrapper: black;
+        --button: #5aa2ea;
+    }
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.wrapper {
+    position: relative;
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background: var(--background);
+}
+
+.wrapper .info {
+    position: absolute;
+    display: flex;
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    width: 100%;
+    height: 100vh;
+    animation: info 0.3s linear forwards;
+}
+
+@keyframes info {
+    0% {
+        transform: scale(.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.wrapper .info .infowrapper {
+    position: absolute;
+    display: flex;
+    width: 30rem;
+    border-radius: 20px;
+    background: var(--wrapper);
+    flex-direction: column;
+    overflow: hidden;
+    color: var(--text);
+}
+
+.wrapper .info .infowrapper .top {
+    position: relative;
+}
+
+.wrapper .info .infowrapper .top h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #333;
+    padding: .5rem;
+    font-size: 1.4rem;
+}
+
+.wrapper .info .infowrapper .top h1 img{
+    width: 2rem;
+    margin-right: .5rem;
+}
+
+.wrapper .info .infowrapper .top span {
+    position: absolute;
+    right: 1rem;
+    top: .7rem;
+    color: white;
+    cursor: pointer;
+}
+
+.wrapper .info .infowrapper .desc {
+    padding: 2rem;
+    text-align: center;
+    font-size: 14px;
+}
+
+.wrapper .info .infowrapper .desc span {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.wrapper .info .infowrapper .desc2 {
+    padding: 0 2rem 2rem;
+    text-align: center;
+    font-size: 15px;
+}
+
+.wrapper .info .infowrapper .desc2 span {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.wrapper .info .infowrapper .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 3rem;
+    font-size: 1rem;
+    font-weight: 600;
+    background: #333;
+}
+
+section {
+    width: 25rem;
+    padding: 1.2rem 2rem;
+    border-radius: 15px;
+    background: var(--wrapper);
+    color: var(--text);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 0 128px 0 rgb(0, 0, 0, 0.1), 0 32px 64px -48px rgba(0, 0, 0, 0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+    section {
+        box-shadow: 0 0 128px 0 #1C202C, 0 32px 64px -48px #1C202C;
+    }
+}
+
+section header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding-bottom: .3rem;
+    border-bottom: 1px solid #e6e6e6;
+    text-align: center;
+}
+
+section header img {
+    width: 2rem;
+    margin-right: .5rem;
+}
+
+section .dev {
+    font-size: 12px;
+    padding-top: .5rem;
+    color: var(--text);
+    text-align: center;
+}
+
+section .dev a {
+    color: var(--text);
+}
+
+section form {
+    padding: 1.2rem 0;
+}
+
+section form .field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: .5rem;
+}
+
+section form .field label {
+    margin-top: .3rem;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+section form .field input {
+    outline: none;
+    margin-top: .5rem;
+    border: 1px solid var(--border);
+    padding: .6rem 1rem;
+    font-size: 16px;
+    border-radius: 7px;
+    color: var(--text);
+    background: transparent;
+}
+
+section form .button button {
+    margin-top: 1rem;
+    padding: .6rem;
+    font-size: 17px;
+    font-weight: 500;
+    background: var(--button);
+    color: var(--wrapper);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+section .link {
+    text-align: center;
+    font-size: 16px;
+}
+
+section .link a {
+    color: var(--text);
+}
+
+section .link a:hover {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.toast {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    border-radius: 12px;
+    border-left: 4px solid red;
+    background: var(--wrapper);
+    padding: 1.5rem;
+    box-shadow: 0 5px 10px var(--navbackground);
+    overflow: hidden;
+    transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.35);
+    animation: toast .2s linear forwards;
+}
+
+@keyframes toast {
+    0% {
+        transform: translateX(calc(100% + 30px));
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.toast .toast-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toast .toast-content i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    font-size: 17px;
+    background: red;
+    color: white;
+}
+
+.toast .toast-content .message {
+    display: flex;
+    flex-direction: column;
+    margin-left: .5rem;
+}
+
+.toast .toast-content .message p {
+    font-size: 12px;
+    letter-spacing: .5px;
+    color: var(--text);
+}
+
+.toast .toast-content .message p:nth-child(1) {
+    color: red;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.toast .close {
+    position: absolute;
+    font-size: 18px;
+    top: .5rem;
+    right: .5rem;
+    opacity: .7;
+    cursor: pointer;
+}
+
+.toast .close:hover {
+    opacity: 1;
+    font-weight: 700;
+}
+
+.toast .progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background: #ddd;
+}
+
+.toast .progress::before {
+    
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: red;
+    animation: progress 5s linear forwards;
+}
+
+@keyframes progress {
+    0% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0%;
+    }
+}
+
+@media (max-width: 530px) {
+    .wrapper .info .infowrapper {
+        width: 80%;
+    }
+}

@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppons:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: "Poppins", sans-serif;
+    transition: .2s all linear;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+:root {
+    --background: #f7f7f7;
+    --text: black;
+    --wrapper: white;
+    --border: #ccc;
+    --button: #333;
+    --chatarea: #e8e7e7;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: black;
+        --text: white;
+        --wrapper: black;
+        --button: #5aa2ea;
+        --chatarea: #464646;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    background: transparent;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 1rem;
+    background: var(--background);
+}
+
+section {
+    width: 26rem;
+    border-radius: 15px;
+    background: var(--wrapper);
+    color: var(--text);
+    border-radius: 16px;
+    box-shadow: 0 0 128px 0 rgb(0, 0, 0, 0.1), 0 32px 64px -48px rgba(0, 0, 0, 0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+    section {
+        box-shadow: 0 0 128px 0 #1C202C, 0 32px 64px -48px #1C202C;
+    }
+}
+
+/* CHAT AREA */
+section header {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    color: var(--text);
+}
+
+section header img {
+    height: 45px;
+    width: 45px;
+    margin: 0 .5rem;
+    border-radius: 50%;
+}
+
+section header .back-icon {
+    font-size: 18px;
+    color: var(--text);
+}
+
+section header span {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+section .chat-box {
+    height: 500px;
+    overflow-y: auto;
+    background: var(--chatarea);
+    padding: 10px 20px 20px 30px;
+    box-shadow: inset 0 32px 32px -32px rgb(0 0 0 / 5%), inset 0 -32px 32px -32px rgb(0 0 0 / 5%);
+}
+
+section .chat-box .chat {
+    margin: 1rem;
+}
+
+section .chat-box .chat p {
+    word-wrap: break-word;
+    padding: 8px 16px;
+    box-shadow: 0 0 32px rgb(0 0 0 /8%), 0 16px -16px rgb(0 0 0 / 10%);
+}
+
+section .chat-box .outgoing {
+    display: flex;
+    justify-content: flex-end;
+}
+
+section .chat-box .outgoing .details {
+    margin-left: 10px;
+    margin-top: 8px;
+}
+
+section .chat-box .outgoing .details p {
+    position: relative;
+    background: #333;
+    color: #fff;
+    padding-right: 2.5rem;
+    border-radius: 18px 18px 0 18px;
+}
+
+section .chat-box .outgoing .details p span {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: .2rem;
+    font-size: 8px;
+    font-weight: 400;
+    color: #c7c7c7;
+    letter-spacing: 1px;
+}
+
+section .chat-box .incoming {
+    display: flex;
+    align-items: flex-end;
+}
+
+section .chat-box .incoming img {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+}
+
+section .chat-box .incoming .details {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 8px;
+}
+
+section .chat-box .incoming .details p {
+    position: relative;
+    background: #fff;
+    color: #333;
+    padding-right: 2.5rem;
+    border-radius: 18px 18px 18px 0;
+}
+
+section .chat-box .incoming .details p span {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: .2rem .5rem;
+    font-size: 8px;
+    font-weight: 400;
+    color: #000000;
+    letter-spacing: 1px;
+}
+
+section .typing-area {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+section .typing-area input {
+    height: 45px;
+    width: calc(100% - 58px);
+    font-size: 17px;
+    border: 1px solid #ccc;
+    color: var(--text);
+    background: var(--background);
+    padding: 0 13px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+section .typing-area button {
+    width: 55px;
+    border: none;
+    outline: none;
+    background: var(--button);
+    color: #fff;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+}
+
+section .god-only {
+    display: flex;
+    width: 100%;
+    padding: 1rem;
+    justify-content: center;
+}
+
+@media (max-width: 430px) {
+    section {
+        width: 100%;
+    }
+}

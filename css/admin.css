@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppons:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: "Poppins", sans-serif;
+    transition: .2s all linear;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+:root {
+    --background: #f7f7f7;
+    --text: black;
+    --wrapper: white;
+    --border: #ccc;
+    --button: #333;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: black;
+        --text: white;
+        --wrapper: black;
+        --button: #5aa2ea;
+    }
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 1rem;
+    background: var(--background);
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    width: 25rem;
+    overflow: hidden;
+    border-radius: 15px;
+    background: var(--wrapper);
+    color: var(--text);
+    border-radius: 20px;
+    box-shadow: 0 0 128px 0 rgb(0, 0, 0, 0.1), 0 32px 64px -48px rgba(0, 0, 0, 0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+    section {
+        box-shadow: 0 0 128px 0 #1C202C, 0 32px 64px -48px #1C202C;
+    }
+}
+
+section .top,
+section .bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #333;
+    padding: 1rem;
+}
+
+section .top h1,
+section .bottom h1 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+}
+
+section .top img {
+    width: 2rem;
+    margin-right: .5rem;
+}
+
+section header {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    /* padding: 1rem 0; */
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+section header .content {
+    display: flex;
+}
+
+section header .content img {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+section header .content .details {
+    margin-left: .7rem;
+}
+
+section header .content .details span {
+    font-size: 18px;
+    font-weight: 500;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+section header .content .details p {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+section header .action {
+    display: flex;
+    align-items: center;
+}
+
+section header .action .logout {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    padding: .5rem 1rem;
+    background: #333;
+    border-radius: 5px;
+}
+
+section header .action .admin {
+    color: var(--text);
+    background: #333;
+    padding: .8rem;
+    border-radius: 5px;
+    margin-right: .5rem;
+    font-size: 15px;
+}
+
+section .search {
+    margin: 1.2rem 0;
+    padding: 0 1.5rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section .search .text {
+    font-size: 16px;
+    color: var(--text);
+}
+
+section .search input {
+    position: absolute;
+    height: 42px;
+    color: var(--text);
+    background: var(--background);
+    width: calc(100% - 100px);
+    border: 1px solid #ccc;
+    padding: 0 1rem;
+    font-size: 16px;
+    border-radius: 5px 0 0 5px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+section .search input.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+section .search button {
+    width: 47px;
+    height: 42px;
+    color: #fff;
+    background: #333;
+    cursor: pointer;
+    font-size: 17px;
+    border-radius: 0 5px 5px 0;
+    transition: all 0.2s ease;
+}
+
+section .search button.active {
+    color: #333;
+    background: #fff;
+}
+
+section .users-list {
+    padding: 0 1.5rem;
+    max-height: 14rem;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+section .users-list .no-user {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+section .users-list .temancontent:last-child {
+    border: none;
+}
+
+section .users-list .temancontent {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: var(--text);
+    padding-bottom: .7rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+section .users-list .temancontent .content {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+section .users-list .temancontent .content img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+section .users-list .temancontent .details {
+    margin-left: .7rem;
+}
+
+section .users-list .temancontent .details span {
+    font-size: 18px;
+    font-weight: 500;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+section .users-list .temancontent .action {
+    display: flex;
+    align-items: center;
+}
+
+section .users-list .temancontent .action .button {
+    padding: 0 .25rem;
+    background: transparent;
+    cursor: pointer;
+}
+
+section .users-list .temancontent .action .button .delete {
+    color: red;
+    background: #333;
+    padding: .5rem;
+    border-radius: 5px;
+    font-size: 17px;
+}
+
+section .users-list .temancontent .action .button .role {
+    color: white;
+    background: #333;
+    padding: .5rem;
+    border-radius: 5px;
+    font-size: 17px;
+}
+
+section .users-list .temancontent .action .button .rolegod {
+    color: var(--button);
+    background: #333;
+    padding: .5rem;
+    border-radius: 5px;
+    font-size: 17px;
+}
+
+#pagenotfound-teman {
+    display: none;
+    color: var(--text);
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    padding: 1rem;
+}
+
+
+@media (max-width: 430px) {
+
+    section .users-list {
+        padding: 0 1.5rem;
+        max-height: 25rem;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+}
